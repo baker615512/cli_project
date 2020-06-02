@@ -2,4 +2,4 @@
 
 require_relative '../lib/dnd_skills_cli.rb'
 
-#Cli.new.run
+Cli.new.run
