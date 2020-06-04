@@ -13,7 +13,7 @@ class Api
 
     def self.get_skills_details(name)
         selected_skill = DndSkills.find_by_name(name)
-        res = RestClient.get("#{BASE_URL}#{name.downcase.gsub(" ", "-")}/")
+        res = RestClient.get("#{BASE_URL}#{name.downcase.gsub(" ", "-")}")
         data = JSON.parse(res.body)
         details = data['desc']
         selected_skill.update(details)
