@@ -25,7 +25,7 @@ class Cli
     end
 
     def print_selection_prompt
-        puts 'Please enter a skill to learn more about it.'
+        puts 'Please enter the number of a skill to learn more about it.'
     end
 
     def prompt_selection
@@ -53,7 +53,7 @@ class Cli
     end
 
     def print_details(skill)
-        puts 'Name: ' + skill.name
+        puts 'Skill: ' + skill.name
         puts 'Details: ' + skill.details.join 
     end
 
