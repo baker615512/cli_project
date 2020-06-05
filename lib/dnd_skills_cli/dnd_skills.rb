@@ -1,7 +1,6 @@
 class DndSkills
 
-    attr_reader :name 
-    attr_accessor :details
+    attr_accessor :name, :details
     @@all = []
 
     def initialize(name)
@@ -14,7 +13,7 @@ class DndSkills
     end
 
     def self.find_by_name(name)
-       all.detect(&:name)
+       all.detect{ |skill| skill.name == name}
     end
 
     def update(details)

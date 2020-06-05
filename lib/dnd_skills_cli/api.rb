@@ -17,6 +17,5 @@ class Api
         data = JSON.parse(res.body)
         details = data['desc']
         selected_skill.update(details)
-        selected_skill
     end
 end

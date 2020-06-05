@@ -18,6 +18,7 @@ class Cli
         print_details(updated_skill)
         print_continue
         continue?(prompt_selection)
+        
     end
 
     def print_all
@@ -29,7 +30,7 @@ class Cli
     end
 
     def prompt_selection
-        gets.chomp
+        gets.strip 
     end
 
     def valid_index?(index)
@@ -46,15 +47,15 @@ class Cli
     end
 
     def get_skills_details(index)
-        name = DndSkills.all[index -=1].name
+        name = DndSkills.all[index -= 1].name
         selected_skill = DndSkills.find_by_name(name)
         Api.get_skills_details(name) unless selected_skill.has_details?
         selected_skill
     end
 
-    def print_details(skill)
-        puts 'Skill: ' + skill.name
-        puts 'Details: ' + skill.details.join 
+    def print_details(selected_skill)
+        puts "Skill: #{selected_skill.name}"
+        puts "Details: #{selected_skill.details.join}"
     end
 
     def print_continue
