@@ -54,6 +54,7 @@ class Cli
     end
 
     def print_details(selected_skill)
+        system "clear"
         puts "Skill: #{selected_skill.name}"
         puts "Details: #{selected_skill.details.join}"
     end
